@@ -1,0 +1,103 @@
+site_name: ATLAS Knowledge Base
+site_description: Shared ATLAS notes for the team and AI agents, starting with the multi-drone simulation.
+site_url: https://aerotec-atlas.github.io/knowledge_base/
+repo_url: https://github.com/AeroTec-ATLAS/knowledge_base
+repo_name: AeroTec-ATLAS/knowledge_base
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 ATLAS
+
+theme:
+  name: material
+  variant: classic
+  language: en
+  features:
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AeroTec-ATLAS
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:zensical.extensions.emoji.twemoji
+      emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+    anchors: warn
+
+nav:
+  - Home: index.md
+  - Using the knowledge base: using-the-knowledge-base.md
+  - Team memory and AI wiki: team-memory.md
+  - Areas:
+      - Control & Mission Planning:
+          - control-mission-planning/index.md
+          - Multi-drone: control-mission-planning/multi-drone.md
+      - Aerodynamics: aerodynamics/index.md
+      - Structures: structures/index.md
+      - Systems & Electronics: systems-electronics/index.md
+      - Software & AI: software-ai/index.md
+      - Media & Communication: media-communication/index.md
+      - Outreach & Logistics: outreach-logistics/index.md
+      - Team & Operations: team-operations/index.md
